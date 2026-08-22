@@ -68,7 +68,7 @@ The application checks whether the selected folder is a Git repository and displ
 
 ### 2. Start a feature branch
 
-Feature branches can be started only when the current branch is `develop`.
+Feature branches can be started only when the current branch is `develop`(case-insensitive).
 
 Enter the feature name without the `feature/` prefix.
 
