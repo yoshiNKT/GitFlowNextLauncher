@@ -151,6 +151,15 @@ The application intentionally avoids additional NuGet dependencies and uses stan
 
 Git operations are executed through `git.exe`, while Git Flow feature operations are executed through `git-flow-next`.
 
-### License
+## Design Philosophy
+
+**Fuckin' Separation of Concerns!**  
+**Fuckin' MVVM!**
+
+Keep it simple.  
+This project is intentionally designed around the actual scope of the
+application rather than introducing abstractions for their own sake.
+
+## License
 
 [MIT License](LICENSE)
