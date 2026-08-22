@@ -153,7 +153,7 @@ Git operations are executed through `git.exe`, while Git Flow feature operations
 
 ## Design Philosophy
 
-**Fuckin' Separation of Concerns!**  
+**Fuckin' Overengineering of Concerns!**  
 **Fuckin' MVVM!**
 
 Keep it simple.  
