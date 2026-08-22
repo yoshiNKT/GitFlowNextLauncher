@@ -1,0 +1,19 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Build outputs
+bin/
+obj/
+
+# NuGet packages (通常は不要)
+packages/
+
+# Rider
+.idea/
+
+# Logs
+*.log
+*.tmp
+.dotnet-cli/

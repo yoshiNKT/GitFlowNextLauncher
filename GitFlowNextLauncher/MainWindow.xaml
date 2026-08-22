@@ -1,0 +1,167 @@
+﻿<Window
+    x:Class="GitFlowNextLauncher.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:GitFlowNextLauncher"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="640"
+    Height="420"
+    MinWidth="480"
+    MinHeight="320"
+    Activated="Window_Activated"
+    AllowDrop="True"
+    Closing="Window_Closing"
+    DragOver="Window_DragOver"
+    Drop="Window_Drop"
+    FontFamily="Noto Sans JP"
+    Loaded="Window_Loaded"
+    ThemeMode="Dark"
+    WindowStartupLocation="CenterScreen">
+
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="24" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Header  -->
+        <TextBlock
+            Grid.Row="0"
+            FontSize="24"
+            FontWeight="SemiBold"
+            Text="GitFlowNextLauncher" />
+
+        <!--  Repository  -->
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="8" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Grid.Row="0"
+                FontSize="16"
+                FontWeight="SemiBold"
+                Text="Repository" />
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="12" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBox
+                    x:Name="RepositoryPathTextBox"
+                    Grid.Column="0"
+                    Padding="8,6"
+                    VerticalContentAlignment="Center"
+                    AllowDrop="True"
+                    IsReadOnly="True"
+                    PreviewDragOver="RepositoryPathTextBox_DragOver"
+                    PreviewDrop="RepositoryPathTextBox_Drop" />
+
+                <Button
+                    x:Name="OpenRepositoryButton"
+                    Grid.Column="2"
+                    Padding="16,8"
+                    Click="OpenRepositoryButton_Click"
+                    Content="リポジトリを開く"
+                    FontSize="14"
+                    FontWeight="Bold" />
+            </Grid>
+        </Grid>
+
+        <!--  Current Branch  -->
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="140" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                FontWeight="SemiBold"
+                Text="現在のブランチ" />
+
+            <TextBlock
+                x:Name="CurrentBranchTextBlock"
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                FontSize="16" />
+        </Grid>
+
+        <!--  Feature  -->
+        <Grid Grid.Row="6" Margin="0,0,0,8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="8" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock
+                Grid.Row="0"
+                FontSize="16"
+                FontWeight="SemiBold"
+                Text="フィーチャー" />
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="12" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Margin="0,0,4,0"
+                    VerticalAlignment="Center"
+                    FontWeight="SemiBold"
+                    Text="feature/" />
+
+                <TextBox
+                    x:Name="FeatureNameTextBox"
+                    Grid.Column="1"
+                    Padding="8,6"
+                    VerticalContentAlignment="Center"
+                    AllowDrop="True"
+                    PreviewDragOver="RepositoryPathTextBox_DragOver"
+                    PreviewDrop="RepositoryPathTextBox_Drop" />
+
+                <Button
+                    x:Name="StartFeatureButton"
+                    Grid.Column="3"
+                    Padding="16,7"
+                    Click="StartFeatureButton_Click"
+                    Content="フィーチャー開始"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    IsEnabled="False" />
+            </Grid>
+        </Grid>
+
+        <!--  Status  -->
+        <Border
+            Grid.Row="8"
+            Padding="8,8"
+            Background="#424242"
+            CornerRadius="4">
+            <TextBlock
+                x:Name="StatusTextBlock"
+                Foreground="#F5F5F5"
+                TextWrapping="Wrap" />
+        </Border>
+    </Grid>
+</Window>
