@@ -4,6 +4,8 @@ A lightweight GUI client for Git Flow feature branch creation using [git-flow-ne
 
 GitFlowNextLauncher is a small WPF application designed to provide a simple GUI for starting Git Flow feature branches without relying on SourceTree's Git Flow integration.
 
+![Application MainWindow](docs/app_mainwindow.jpg)
+
 ## Features
 
 - Open a Git repository
