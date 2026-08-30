@@ -148,6 +148,15 @@ public partial class MainWindow : Window
 
         StartFeatureButton.IsEnabled = isTargetBranch;
 
+        if(isTargetBranch)
+        {
+            UpdateStatusText("developブランチが選択されました。");
+        }
+        else
+        {
+            UpdateStatusText("developブランチが選択されていません。");
+        }
+
         return isTargetBranch;
     }
 

@@ -8,7 +8,7 @@
     <UseWPF>true</UseWPF>
 	<Authors>Hide</Authors>
 	<Company>Hide Works</Company>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
 	<IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
 	<NeutralLanguage>ja-JP</NeutralLanguage>
 	<ApplicationIcon>Assets\HideWorks.ico</ApplicationIcon>
