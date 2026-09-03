@@ -1,5 +1,6 @@
 ﻿using GitFlowNextLauncher.Model;
 using System.Media;
+using System.Text.RegularExpressions;
 using System.Windows;
 
 namespace GitFlowNextLauncher;
@@ -10,7 +11,7 @@ public partial class MainWindow
         object sender,
         RoutedEventArgs e)
     {
-        var featureName = FeatureNameTextBox.Text.Trim();
+        var featureName = NormalizeFeatureName(FeatureNameTextBox.Text);
 
         if (string.IsNullOrWhiteSpace(RepositoryPathTextBox.Text))
         {
@@ -90,5 +91,20 @@ public partial class MainWindow
         {
             StartFeatureButton.IsEnabled = true;
         }
+    }
+
+    // Git使用禁止文字の置き換え
+    private static string NormalizeFeatureName(string featureName)
+    {
+        featureName = featureName.Trim();
+
+        // Gitブランチ名で使用できない文字を半角アンダースコアに置換
+        // 全角はスペースのみ置き換え対象
+        featureName = Regex.Replace(
+            featureName,
+            @"[\x00-\x20~^:?*\[\\　]",
+    "_");
+
+        return featureName;
     }
 }

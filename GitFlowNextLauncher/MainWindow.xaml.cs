@@ -1,6 +1,7 @@
 ﻿using GitFlowNextLauncher.Model;
 using System.IO;
 using System.Media;
+using System.Reflection;
 using System.Windows;
 
 namespace GitFlowNextLauncher;
@@ -19,6 +20,12 @@ public partial class MainWindow : Window
 
     private async void Window_Loaded(object sender, RoutedEventArgs e)
     {
+        // タイトル置き換え
+
+        var version = Assembly.GetExecutingAssembly().GetName().Version;
+        this.AppTitle.Text = $"GitFlowNextLauncher v{version?.Major}.{version?.Minor}.{version?.Build}";
+
+        // 設定ロード
         AppSettings.Load();
 
         if (string.IsNullOrWhiteSpace(AppSettings.LastRepositoryPath))

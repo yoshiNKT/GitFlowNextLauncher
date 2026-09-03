@@ -35,6 +35,7 @@
 
         <!--  Header  -->
         <TextBlock
+            x:Name="AppTitle"
             Grid.Row="0"
             FontSize="24"
             FontWeight="SemiBold"
